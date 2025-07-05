@@ -1,0 +1,24 @@
+.card__image {
+  height: 413px;
+  width: 413px;
+  object-fit: cover;
+}
+
+.card__content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.card__like-btn {
+  background-image: url(../images/heart.svg);
+}
+
+@media screen and (max-width: 627px) {
+  .card__image {
+    height: 288px;
+  }
+}
