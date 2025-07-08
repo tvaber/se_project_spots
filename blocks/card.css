@@ -2,23 +2,40 @@
   height: 413px;
   width: 413px;
   object-fit: cover;
+  border-radius: 10px;
+}
+
+.card__title {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  font-family: Poppins, Arial, Helvetica, sans-serif;
+  font-style: normal;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 120%;
+  width: 119px;
+  color: #212121;
 }
 
 .card__content {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  overflow: hidden;
 }
 
 .card__like-btn {
   background-image: url(../images/heart.svg);
+  background-color: transparent;
+  border: 0;
+  width: 23px;
+  height: 20px;
+  opacity: 40%;
 }
 
 @media screen and (max-width: 627px) {
   .card__image {
     height: 288px;
+    width: 288px;
   }
 }
