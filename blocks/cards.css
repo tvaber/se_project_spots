@@ -2,8 +2,7 @@
   padding-top: 20px;
   padding-bottom: 40px;
   gap: 20px;
-  width: 1280px;
-  height: 970px;
+  max-width: 1280px;
 }
 
 .cards__list {

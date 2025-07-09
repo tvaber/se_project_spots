@@ -14,7 +14,7 @@
   font-size: 20px;
   font-weight: 500;
   line-height: 120%;
-  width: 119px;
+  max-width: 119px;
   color: #212121;
 }
 
