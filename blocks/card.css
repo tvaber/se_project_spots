@@ -14,7 +14,7 @@
   font-size: 20px;
   font-weight: 500;
   line-height: 120%;
-  max-width: 119px;
+  max-width: 353px;
   color: #212121;
 }
 
@@ -34,6 +34,10 @@
 }
 
 @media screen and (max-width: 627px) {
+  .card__title {
+    max-width: 235px;
+  }
+
   .card__image {
     height: 288px;
     width: 288px;
