@@ -8,7 +8,7 @@ This project is a responsive webpage made to adapt to different screen sizes. De
 Technologies used:
 -HTML
 -CSS
--CSS Grid
+-flexbox/css grid
 -media queries
 -web fonts
 -normalize.css
@@ -16,14 +16,17 @@ Technologies used:
 
 Techniques used:
 -BEM Methodology
-responsive design
-semantic HTML
-CSS file organization
-font fallbacks
+-responsive design
+-semantic HTML
+-CSS file organization
+-font fallbacks
 
 **figma**
 
 - [Link to the project on Figma](https://www.figma.com/file/BBNm2bC3lj8QQMHlnqRsga/Sprint-3-Project-%E2%80%94-Spots?type=design&node-id=2%3A60&mode=design&t=afgNFybdorZO6cQo-1)
+
+**projects video description**
+https://drive.google.com/file/d/1ih25GeVogqNUh0n6rhazKJfM7356RJyd/view?usp=sharing
 
 **git hub link**
 https://github.com/tvaber/se_project_spots.git
