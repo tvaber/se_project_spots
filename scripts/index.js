@@ -1,7 +1,7 @@
 const editProfileBtn = document.querySelector(".profile__edit-btn");
 const editProfileModal = document.querySelector("#edit-profile-modal");
 const editProfileCloseBtn = editProfileModal.querySelector(".modal__close-btn");
-const editProfileForm = editProfileModal.querySelector("modal__form");
+const editProfileForm = editProfileModal.querySelector(".modal__form");
 const editProfileNameInput = editProfileModal.querySelector(
   "#profile-name-input"
 );
@@ -16,10 +16,10 @@ const newPostCloseBtn = newPostModal.querySelector(".modal__close-btn");
 const profileNameEl = document.querySelector(".profile__name");
 const profileDescriptionEl = document.querySelector(".profile__description");
 
-const modalElement = document.querySelector(".input");
-const addCardFormElement = modalElement.querySelector("add__card-form");
-const nameInput = modalElement.querySelector("name__input");
-const linkInput = modalElement.querySelector("link__input");
+const modalElement = document.querySelector(".modal__form");
+const addCardFormElement = modalElement.querySelector(".modal__input");
+const nameInput = modalElement.querySelector("#profile__description-input");
+const linkInput = modalElement.querySelector("#card-image-input");
 
 editProfileBtn.addEventListener("click", function () {
   editProfileNameInput.value = profileNameEl.textContent;
@@ -42,6 +42,7 @@ newPostCloseBtn.addEventListener("click", function () {
 function handleEditProfileSubmit(evt) {
   evt.preventDefault();
   profileNameEl.textContent = editProfileNameInput.value;
+  profileDescriptionEl.textContent = editProfileDescriptionInput.value;
   editProfileModal.classList.remove("modal_is-opened");
 }
 
