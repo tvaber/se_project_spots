@@ -16,41 +16,49 @@ const newPostCloseBtn = newPostModal.querySelector(".modal__close-btn");
 const profileNameEl = document.querySelector(".profile__name");
 const profileDescriptionEl = document.querySelector(".profile__description");
 
-const modalElement = document.querySelector(".modal__form");
-const addCardFormElement = modalElement.querySelector(".modal__input");
-const nameInput = modalElement.querySelector("#profile__description-input");
-const linkInput = modalElement.querySelector("#card-image-input");
+const addCardModal = document.querySelector("#new-post-modal");
+const addCardFormElement = addCardModal.querySelector("#new-post");
+const nameInput = addCardModal.querySelector("#profile-description-input");
+const linkInput = addCardModal.querySelector("#card-image-input");
+
+function openModal(modal) {
+  modal.classList.add("modal_opened");
+}
+
+function closeModal(modal) {
+  modal.classList.remove("modal_opened");
+}
 
 editProfileBtn.addEventListener("click", function () {
   editProfileNameInput.value = profileNameEl.textContent;
   editProfileDescriptionInput.value = profileDescriptionEl.textContent;
-  editProfileModal.classList.add("modal_is-opened");
+  openModal(editProfileModal);
 });
 
 editProfileCloseBtn.addEventListener("click", function () {
-  editProfileModal.classList.remove("modal_is-opened");
+  editProfileModal.classList.remove("modal_opened");
 });
 
 newPostBtn.addEventListener("click", function () {
-  newPostModal.classList.add("modal_is-opened");
+  newPostModal.classList.add("modal_opened");
 });
 
 newPostCloseBtn.addEventListener("click", function () {
-  newPostModal.classList.remove("modal_is-opened");
+  newPostModal.classList.remove("modal_opened");
 });
 
 function handleEditProfileSubmit(evt) {
   evt.preventDefault();
   profileNameEl.textContent = editProfileNameInput.value;
   profileDescriptionEl.textContent = editProfileDescriptionInput.value;
-  editProfileModal.classList.remove("modal_is-opened");
+  editProfileModal.classList.remove("modal_opened");
 }
-
-editProfileForm.addEventListener("submit", handleEditProfileSubmit);
 
 function handleAddCardSubmit(evt) {
   evt.preventDefault();
-  addCardFormElement.textContent = nameInput.value;
+  console.log(123123);
 }
+
+editProfileForm.addEventListener("submit", handleEditProfileSubmit);
 
 addCardFormElement.addEventListener("submit", handleAddCardSubmit);
