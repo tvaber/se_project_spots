@@ -13,6 +13,7 @@ Technologies used:
 -web fonts
 -normalize.css
 -figma
+-javascripts
 
 Techniques used:
 -BEM Methodology
@@ -20,10 +21,14 @@ Techniques used:
 -semantic HTML
 -CSS file organization
 -font fallbacks
+-openening and closing modals
+-hover and default components
 
 **figma**
 
 - [Link to the project on Figma](https://www.figma.com/file/BBNm2bC3lj8QQMHlnqRsga/Sprint-3-Project-%E2%80%94-Spots?type=design&node-id=2%3A60&mode=design&t=afgNFybdorZO6cQo-1)
+
+-https://www.figma.com/design/p7amENvGmugKHfrOif5p1E/Sprint-5-Project-Spots---March-2025?node-id=0-1&p=f&t=hm7pJUj9Sfv8UGZP-0
 
 **projects video description**
 https://drive.google.com/file/d/1ih25GeVogqNUh0n6rhazKJfM7356RJyd/view?usp=sharing

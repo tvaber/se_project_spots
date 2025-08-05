@@ -1,5 +1,9 @@
 const initialCards = [
   {
+    name: "Golden Gate Bridge",
+    link: " https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/7-photo-by-griffin-wooldridge-from-pexels.jpg",
+  },
+  {
     name: "Val Thorens",
     link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/1-photo-by-moritz-feldmann-from-pexels.jpg",
   },
@@ -48,6 +52,36 @@ const addCardFormElement = addCardModal.querySelector("#new-post");
 const nameInput = addCardModal.querySelector("#profile-description-input");
 const linkInput = addCardModal.querySelector("#card-image-input");
 
+const cardTemplate = document
+  .querySelector("#card-template")
+  .content.querySelector(".card");
+const cardsList = document.querySelector(".cards__list");
+
+function getCardElement(data) {
+  const cardElement = cardTemplate.cloneNode(true);
+  const cardTitleEl = cardElement.querySelector(".card__title");
+  const cardImageEl = cardElement.querySelector(".card__image");
+
+  cardImageEl.src = data.link;
+  cardImageEl.alt = data.name;
+  cardTitleEl.textContent = data.name;
+
+  const cardLikeBtnEl = cardElement.querySelector(".card__like-btn");
+  cardLikeBtnEl.addEventListener("click", () => {
+    cardLikeBtnEl.classList.toggle("card__like-btn_active");
+  });
+
+  const cardDeleteBtnEl = cardElement.querySelector(".card__delete-btn");
+  cardDeleteBtnEl.addEventListener("click", () => {});
+  cardElement.remove();
+
+  cardImageEl.addEventListener("click", () => {
+    previewImageEl.src = data.link;
+  });
+
+  return cardElement;
+}
+
 function openModal(modal) {
   modal.classList.add("modal_opened");
 }
@@ -74,6 +108,10 @@ newPostCloseBtn.addEventListener("click", function () {
   closeModal(newPostModal);
 });
 
+editProfileForm.addEventListener("submit", handleEditProfileSubmit);
+
+addCardFormElement.addEventListener("submit", handleAddCardSubmit);
+
 function handleEditProfileSubmit(evt) {
   evt.preventDefault();
   profileNameEl.textContent = editProfileNameInput.value;
@@ -88,11 +126,15 @@ function handleAddCardSubmit(evt) {
   closeModal(newPostModal);
 }
 
-editProfileForm.addEventListener("submit", handleEditProfileSubmit);
+addCardFormElement.addEventListener("submit", function (evt) {
+  evt.preventDefault();
+  console.log(nameInput.value);
+  console.log(linkInput.value);
 
-addCardFormElement.addEventListener("submit", handleAddCardSubmit);
+  addCardModal.classList.remove("modal__opened");
+});
 
 initialCards.forEach(function (item) {
-  console.log(item.name);
-  console.log(item.link);
+  const cardElement = getCardElement(item);
+  cardsList.prepend(cardElement);
 });
