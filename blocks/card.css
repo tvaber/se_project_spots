@@ -10,6 +10,7 @@
   width: 413px;
   object-fit: cover;
   border-radius: 10px;
+  cursor: pointer;
 }
 
 .card__title {
@@ -45,6 +46,7 @@
 .card__delete-btn:hover {
   background-image: url(../images/delete__Hover.svg);
   opacity: 1;
+  cursor: pointer;
 }
 
 .card__delete-btn_active:hover {
@@ -62,11 +64,13 @@
 
 .card__like-btn:hover {
   opacity: 1;
+  cursor: pointer;
 }
 
 .card__like-btn_active {
   background-image: url(../images/Union__active.svg);
   opacity: 1;
+  background-repeat: no-repeat;
 }
 
 .card__like-btn_active:hover {
