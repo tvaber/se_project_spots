@@ -139,9 +139,9 @@ function handleAddCardSubmit(evt) {
     link: linkInput.value,
   });
 
-  console.log(nameInput.value);
-  console.log(linkInput.value);
+  cardsList.prepend(newCardElement);
   closeModal(newPostModal);
+  evt.target.reset();
 }
 
 initialCards.forEach(function (item) {
