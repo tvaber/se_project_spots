@@ -57,7 +57,7 @@
         <div class="modal__container">
           <button class="modal__close-btn"></button>
           <h2 class="modal__title">Edit profile</h2>
-          <form class="modal__form" id="edit-profile-modal" novalidate>
+          <form class="modal__form" id="profile-name-input">
             <label for="profile-name-input" class="modal__label">
               Name
               <input
@@ -82,10 +82,7 @@
                 maxlength="200"
                 required
               />
-              <span
-                id="profile-description-input-error"
-                class="modal__error"
-              ></span>
+              <span class="modal__error"></span>
             </label>
             <button type="submit" class="modal__submit-btn">Save</button>
           </form>
