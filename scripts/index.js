@@ -52,6 +52,8 @@ const addCardFormElement = addCardModal.querySelector("#new-post");
 const nameInput = addCardModal.querySelector("#profile-description-input");
 const linkInput = addCardModal.querySelector("#card-image-input");
 
+const cardSubmitBtn = addCardModal.querySelector(".modal__btn");
+
 const previewModal = document.querySelector("#preview__modal");
 const previewModalImage = previewModal.querySelector(".modal__image");
 const previewModalCloseBtn = previewModal.querySelector(".modal__close-btn");
