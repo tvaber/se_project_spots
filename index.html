@@ -13,7 +13,7 @@
   <body>
     <div class="page">
       <header class="header">
-        <img src="./images/Logo.svg" alt="spot Logo" class="header__Logo" />
+        <img src="./images/Logo.svg" alt="spot Logo" class="header__logo" />
       </header>
       <main class="content">
         <section class="profile page__section">
@@ -82,7 +82,10 @@
                 maxlength="200"
                 required
               />
-              <span class="modal__error"></span>
+              <span
+                id="profile-description-input-error"
+                class="modal__error"
+              ></span>
             </label>
             <button type="submit" class="modal__submit-btn">Save</button>
           </form>
@@ -106,26 +109,25 @@
               />
               <span id="card-image-input-error" class="modal__error"></span>
             </label>
-            <label class="modal__label"> Description </label>
+            <label for="profile-text-input" class="modal__label">
+              Text
+              <input
+                id="profile-text-input"
+                type="text"
+                class="modal__input"
+                placeholder="Author"
+                minlength="2"
+                maxlength="200"
+                required
+              />
+              <span id="profile-text-input-error" class="modal__error"></span>
+            </label>
             <button type="submit" class="modal__submit-btn">Save</button>
-            <input
-              id="profile-text-input"
-              type="text"
-              class="modal__input"
-              placeholder="Author"
-              minlength="2"
-              maxlength="200"
-              required
-            />
-            <span
-              id="profile-description-input-error"
-              class="modal__error"
-            ></span>
           </form>
         </div>
       </div>
     </div>
-    <div class="modal modal__is-opened" id="preview__modal">
+    <div class="modal modal_opened" id="preview__modal">
       <div class="modal__content modal__content_type_preview">
         <button class="modal__close-btn modal__close-btn_type_preview"></button>
         <img alt="" src="#" class="modal__image" />

@@ -1,7 +1,7 @@
 const settings = {
   formSelector: ".modal__form",
   inputSelector: ".modal__input",
-  submitButtonSelector: ".modal__button",
+  submitButtonSelector: ".modal__submit-btn",
   inactiveButtonClass: "modal__button_disabled",
   inputErrorClass: "modal__input_type_error",
   errorClass: "modal__error_visible",
@@ -9,9 +9,9 @@ const settings = {
 
 const showInputError = (formElement, inputElement, errorMessage) => {
   const errorMessageElement = formElement.querySelector(
-    `.${inputElement.id}-error`
+    `#${inputElement.id}-error`
   );
-  inputElement.classList.add("config.inputErrorClass");
+  inputElement.classList.add(config.inputErrorClass);
   errorMessageElement.textContent = errorMessage;
 };
 
@@ -19,7 +19,7 @@ const hideInputError = (formElement, inputElement) => {
   const errorMessageElement = formElement.querySelector(
     `.${inputElement.id}-error`
   );
-  inputElement.classList.remove("config.inputErrorClass");
+  inputElement.classList.remove(config.inputErrorClass);
   errorMessageElement.textContent = "";
 };
 
@@ -39,7 +39,7 @@ const hasInvalidInput = (inputList) => {
 
 const toggleButtonState = (inputList, buttonElement) => {
   if (hasInvalidInput(inputList)) {
-    buttonElement.classList.add("config.inactiveButtonClass");
+    buttonElement.classList.add(config.inactiveButtonClass);
     buttonElement.disabled = true;
   } else {
     buttonElement.classList.remove("config.inactiveButtonClass");
@@ -61,11 +61,9 @@ const resetValidation = (formElement, inputList) => {
 
 function setEventListeners(formElement) {
   const inputList = Array.from(
-    formElement.querySelectorAll("config.inputSelector")
+    formElement.querySelectorAll(config.inputSelector)
   );
-  const buttonElement = formElement.querySelector(
-    "config.submitButtonSelector"
-  );
+  const buttonElement = formElement.querySelector(config.submitButtonSelector);
 
   toggleButtonState(inputList, buttonElement);
 
@@ -78,13 +76,12 @@ function setEventListeners(formElement) {
 }
 
 function enableValidation(config) {
-  const formList = document.querySelectorAll("config.formSelector");
+  const formList = document.querySelectorAll(config.formSelector);
   formList.forEach((formElement) => {
     setEventListeners(formElement, config);
   });
 }
 
-const fieldsetList = Array.from(formElement.querySelectorAll("form__set"));
 fieldsetList.forEach((fieldset) => {
   setEventListeners(fieldset);
 });
