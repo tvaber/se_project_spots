@@ -57,7 +57,7 @@
         <div class="modal__container">
           <button class="modal__close-btn"></button>
           <h2 class="modal__title">Edit profile</h2>
-          <form class="modal__form" id="profile-name-input">
+          <form class="modal__form">
             <label for="profile-name-input" class="modal__label">
               Name
               <input
@@ -71,7 +71,7 @@
               />
               <span id="profile-name-input-error" class="modal__error"></span>
             </label>
-            <label for="profile-description-input" class="modal__label">
+            <label class="modal__label">
               Description
               <input
                 id="profile-description-input"
@@ -106,23 +106,21 @@
               />
               <span id="card-image-input-error" class="modal__error"></span>
             </label>
-            <label for="profile-description-input" class="modal__label">
-              Description
-              <input
-                id="profile-description-input"
-                type="text"
-                class="modal__input"
-                placeholder="Author"
-                minlength="2"
-                maxlength="200"
-                required
-              />
-              <span
-                id="profile-description-input-error"
-                class="modal__error"
-              ></span>
-            </label>
+            <label class="modal__label"> Description </label>
             <button type="submit" class="modal__submit-btn">Save</button>
+            <input
+              id="profile-text-input"
+              type="text"
+              class="modal__input"
+              placeholder="Author"
+              minlength="2"
+              maxlength="200"
+              required
+            />
+            <span
+              id="profile-description-input-error"
+              class="modal__error"
+            ></span>
           </form>
         </div>
       </div>
