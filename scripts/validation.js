@@ -7,7 +7,7 @@ const settings = {
   errorClass: "modal__error_visible",
 };
 
-const showInputError = (formElement, inputElement, errorMessage) => {
+const showInputError = (formElement, inputElement, errorMessage, config) => {
   const errorMessageElement = formElement.querySelector(
     `#${inputElement.id}-error`
   );
@@ -17,7 +17,7 @@ const showInputError = (formElement, inputElement, errorMessage) => {
 
 const hideInputError = (formElement, inputElement) => {
   const errorMessageElement = formElement.querySelector(
-    `.${inputElement.id}-error`
+    `#${inputElement.id}-error`
   );
   inputElement.classList.remove(config.inputErrorClass);
   errorMessageElement.textContent = "";
@@ -42,7 +42,7 @@ const toggleButtonState = (inputList, buttonElement) => {
     buttonElement.classList.add(config.inactiveButtonClass);
     buttonElement.disabled = true;
   } else {
-    buttonElement.classList.remove("config.inactiveButtonClass");
+    buttonElement.classList.remove(config.inactiveButtonClass);
     buttonElement.disabled = false;
   }
 };
@@ -52,7 +52,7 @@ const disableButton = (buttonElement, config) => {
   buttonElement.disabled = true;
 };
 
-const resetValidation = (formElement, inputList) => {
+const resetValidation = (formElement, inputList, buttonElement) => {
   inputList.forEach((input) => {
     hideInputError(formElement, input);
   });
@@ -81,9 +81,5 @@ function enableValidation(config) {
     setEventListeners(formElement, config);
   });
 }
-
-fieldsetList.forEach((fieldset) => {
-  setEventListeners(fieldset);
-});
 
 enableValidation(settings);

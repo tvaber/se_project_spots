@@ -35,7 +35,6 @@ https://drive.google.com/file/d/1ih25GeVogqNUh0n6rhazKJfM7356RJyd/view?usp=shari
 
 **git hub link**
 https://github.com/tvaber/se_project_spots.git
-
 **Images**
 https://tinypng.com/backend/opt/download/fhp67g6m3hyv7n2amgwqkwn7kqj8y8x0/6-photo-by-moritz-feldmann-from-pexels.jpg
 
