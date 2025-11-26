@@ -40,9 +40,25 @@ const editProfileDescriptionInput = editProfileModal.querySelector(
   "#profile-description-input"
 );
 
+editProfileBtn.addEventListener("click", () => {
+  openModal(editProfileModal);
+});
+
+editProfileCloseBtn.addEventListener("click", () => {
+  closeModal(editProfileModal);
+});
+
 const newPostBtn = document.querySelector(".profile__add-btn");
 const newPostModal = document.querySelector("#new-post-modal");
 const newPostCloseBtn = newPostModal.querySelector(".modal__close-btn");
+
+newPostBtn.addEventListener("click", () => {
+  openModal(newPostModal);
+});
+
+newPostCloseBtn.addEventListener("click", () => {
+  closeModal(newPostModal);
+});
 
 const profileNameEl = document.querySelector(".profile__name");
 const profileDescriptionEl = document.querySelector(".profile__description");
@@ -54,15 +70,19 @@ const linkInput = addCardModal.querySelector("#card-image-input");
 
 const cardSubmitBtn = addCardModal.querySelector(".modal__submit-btn");
 
-const previewModal = document.querySelector(".preview__modal");
+const previewModal = document.querySelector("#preview__modal");
 const previewModalImage = previewModal.querySelector(".modal__image");
 const previewModalCloseBtn = previewModal.querySelector(".modal__close-btn");
 const previewModalTitle = previewModal.querySelector(".modal__caption");
 
+previewModalCloseBtn.addEventListener("click", () => {
+  closeModal(previewModal);
+});
+
 const cardTemplate = document
   .querySelector("#card-template")
   .content.querySelector(".card");
-const cardsList = document.querySelector("#cards__list");
+const cardsList = document.querySelector(".cards__list");
 
 function getCardElement(data) {
   const cardElement = cardTemplate.cloneNode(true);
@@ -99,9 +119,6 @@ function openModal(modal) {
 
 function closeModal(modal) {
   modal.classList.remove("modal_opened");
-  NameEl.textContent;
-  editProfileDescriptionInput.value = profileDescriptionEl.textContent;
-  openModal(editProfileModal);
 }
 
 editProfileForm.addEventListener("submit", handleEditProfileSubmit);
