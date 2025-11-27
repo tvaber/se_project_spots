@@ -29,6 +29,33 @@ const initialCards = [
   },
 ];
 
+function handleEscape(evt) {
+  if (evt.key === "Escape") {
+    const activePopup = document.querySelector(".modal_opened");
+    closeModal(activePopup);
+  }
+}
+
+function openModal(modal) {
+  modal.classList.add("modal_opened");
+  document.addEventListener("keyup", handleEscape);
+}
+
+function closeModal(modal) {
+  modal.classList.remove("modal_opened");
+  document.removeEventListener("keyup", handleEscape);
+}
+
+const modals = document.querySelectorAll(".modal");
+
+modals.forEach((modal) => {
+  modal.addEventListener("mousedown", (evt) => {
+    if (evt.target.classList.contains("modal")) {
+      closeModal(modal);
+    }
+  });
+});
+
 const editProfileBtn = document.querySelector(".profile__edit-btn");
 const editProfileModal = document.querySelector("#edit-profile-modal");
 const editProfileCloseBtn = editProfileModal.querySelector(".modal__close-btn");
@@ -143,6 +170,8 @@ function handleAddCardSubmit(evt) {
   closeModal(newPostModal);
   evt.target.reset();
 }
+
+disableButton(cardSubmitBtn, settings);
 
 initialCards.forEach(function (item) {
   const cardElement = getCardElement(item);
